@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BelajarBareng: The Legacy of Albert Einstein</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background: radial-gradient(
+          circle at 20% 30%,
+          #0b132b,
+          #1c2541,
+          #3a506b
+        );
+        color: #f5f6fa;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://i.ibb.co/1M5JMjB/stars.png") repeat;
+        opacity: 0.3;
+        z-index: -1;
+        animation: stars 100s linear infinite;
+      }
+
+      @keyframes stars {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: 10000px 5000px;
+        }
+      }
+
+      header {
+        text-align: center;
+        padding: 70px 20px 40px;
+      }
+
+      h1 {
+        font-size: 3em;
+        color: #f4d03f;
+        text-shadow: 0 0 20px rgba(255, 223, 0, 0.6);
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        color: #dcdde1;
+        font-weight: 300;
+        font-style: italic;
+        letter-spacing: 1px;
+      }
+
+      nav {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      nav a {
+        color: #f4d03f;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 0 20px;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: #ffffff;
+        text-shadow: 0 0 8px #f4d03f;
+      }
+
+      section {
+        max-width: 900px;
+        margin: 60px auto;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        animation: fadeIn 1.5s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h3 {
+        color: #f4d03f;
+        margin-bottom: 10px;
+        border-left: 4px solid #f4d03f;
+        padding-left: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      p {
+        color: #e1e1e1;
+        line-height: 1.8;
+        text-align: justify;
+        margin-bottom: 25px;
+      }
+
+      .einstein-img {
+        display: block;
+        width: 50%;
+        max-width: 600px;
+        margin: 30px auto;
+        border-radius: 12px;
+        box-shadow: 0 0 25px rgba(244, 208, 63, 0.4);
+        transition: transform 0.3s ease;
+      }
+
+      .einstein-img:hover {
+        transform: scale(1.03);
+      }
+
+      footer {
+        text-align: center;
+        color: #f4d03f;
+        font-size: 0.9em;
+        padding: 25px 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 60px;
+      }
+
+      footer a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #f4d03f;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="beranda">
+      <h1>Albert Einstein</h1>
+      <h2>"Imagination is more important than knowledge"</h2>
+      <h4 class="pembuka">
+        Selamat datang di <b>BelajarBareng</b>, tempat berbagi wawasan, ide, dan
+        inspirasi dari berbagai bidang ilmu. Setiap rasa ingin tahu adalah
+        langkah kecil menuju penemuan besar 🌟
+      </h4>
+
+      <h4 class="pembuka">
+        Kali ini, kita akan membahas sosok jenius yang mengubah cara pandang
+        manusia terhadap alam semesta, <b>Albert Einstein</b>. Yuk, kita
+        jelajahi kisah hidup, pemikiran, dan warisan ilmiahnya yang terus
+        menginspirasi dunia hingga kini!
+      </h4>
+
+      <style>
+        .pembuka {
+          text-align: justify;
+          text-justify: inter-word;
+          font-family: "Open Sans", sans-serif;
+          font-weight: normal;
+          color: #e1e1e1;
+          line-height: 1.8;
+          font-size: 1.1em;
+          max-width: 800px;
+          margin: 0 auto 25px;
+        }
+
+        .pembuka b {
+          color: #f4d03f;
+        }
+      </style>
+    </header>
+
+    <nav>
+      <a href="#biografi">Biografi</a>|
+      <a href="#perjalanan">Perjalanan Karier</a>|
+      <a href="#penemuan">Penemuan</a> | 
+      <a href="#penghargaan">Penghargaan</a>
+    </nav>
+
+    <section id="biografi">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg"
+        alt="Albert Einstein"
+        class="einstein-img"
+      />
+      <h3>Biografi Singkat</h3>
+      <p>
+        Albert Einstein lahir pada tanggal 14 Maret 1879 di Ulm, Württemberg,
+        Jerman. Ia merupakan anak pertama dari pasangan Hermann Einstein dan
+        Pauline Koch. Ayahnya bekerja sebagai insinyur dan pemilik perusahaan
+        listrik kecil, sementara ibunya dikenal sebagai wanita yang gemar musik.
+        Sejak kecil, Einstein menunjukkan rasa ingin tahu yang tinggi terhadap
+        fenomena alam dan memiliki kemampuan berpikir logis yang luar biasa,
+        meskipun ia baru mulai lancar berbicara pada usia tiga tahun.
+      </p>
+      <p>
+        Pada masa sekolah, Einstein bukanlah murid yang selalu mendapatkan nilai
+        terbaik, namun ia sangat menonjol dalam bidang matematika dan fisika. Ia
+        kemudian melanjutkan pendidikan di Politeknik Federal Swiss (ETH Zurich)
+        dan lulus pada tahun 1900. Setelah lulus, Einstein sempat kesulitan
+        mendapatkan pekerjaan sebagai dosen, sehingga ia bekerja sebagai pegawai
+        di Kantor Paten Swiss di Bern. Di sela-sela pekerjaannya, ia terus
+        melakukan penelitian ilmiah secara mandiri.
+      </p>
+      <p>
+        Tahun 1905 menjadi tahun paling bersejarah dalam hidupnya, yang kemudian
+        dikenal sebagai Annus Mirabilis atau “tahun ajaib”. Dalam tahun itu, ia
+        menerbitkan empat makalah ilmiah penting yang mengubah dasar pemahaman
+        manusia terhadap alam semesta, di antaranya tentang efek fotolistrik,
+        gerak Brown, relativitas khusus, dan persamaan energi-massa yang
+        terkenal, yaitu <i>E</i>=<i>mc</i>²
+      </p>
+      <p>
+        Pada tahun 1915, Einstein menyempurnakan teori relativitasnya menjadi
+        Teori Relativitas Umum, yang menjelaskan bahwa gravitasi bukanlah gaya,
+        melainkan kelengkungan ruang dan waktu akibat massa dan energi. Teori
+        ini kemudian terbukti benar melalui pengamatan ilmiah dan menjadikannya
+        ilmuwan paling terkenal di dunia.
+      </p>
+      <p>
+        Einstein menerima Hadiah Nobel Fisika pada tahun 1921, bukan untuk teori
+        relativitasnya, melainkan untuk penjelasannya tentang efek fotolistrik
+        yang membuka jalan bagi perkembangan teknologi modern seperti sel surya.
+      </p>
+      <p>
+        Karena meningkatnya kekuasaan Nazi di Jerman dan latar belakangnya
+        sebagai orang Yahudi, Einstein pindah ke Amerika Serikat pada tahun 1933
+        dan bekerja di Institute for Advanced Study, Princeton, New Jersey. Di
+        sana, ia terus mengembangkan teori fisika, namun juga aktif menyuarakan
+        perdamaian dunia dan menentang penggunaan senjata nuklir.
+      </p>
+      <p>
+        Albert Einstein meninggal dunia pada 18 April 1955 di Princeton, Amerika
+        Serikat, pada usia 76 tahun. Ia meninggalkan warisan luar biasa dalam
+        dunia ilmu pengetahuan dan menjadi simbol kejeniusaan manusia. Hingga
+        kini, nama Einstein tetap identik dengan kecerdasan, kreativitas, dan
+        semangat untuk mencari kebenaran melalui sains.
+      </p>
+    </section>
+
+    <section id="perjalanan">
+      <h3>Perjalanan Karier</h3>
+        <div class="timeline">
+          <div class="event">
+            <div class="year">1896 – 1900</div>
+            <div class="description">
+              Menempuh pendidikan di Swiss Federal Polytechnic, Zürich.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1902 – 1909</div>
+            <div class="description">
+              Bekerja sebagai pegawai di Swiss Patent Office di Bern, sambil
+              menulis karya ilmiah.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1905</div>
+            <div class="description">
+              Menerbitkan <em>Annus Mirabilis Papers</em> (empat makalah
+              revolusioner) yang mengubah fisika modern.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1909</div>
+            <div class="description">
+              Diangkat sebagai profesor luar biasa di University of Zurich.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1911 – 1914</div>
+            <div class="description">
+              Menjadi profesor di German University of Prague dan kembali ke
+              Zürich.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1914</div>
+            <div class="description">
+              Bergabung dengan Prussian Academy of Sciences di Berlin,
+              mengembangkan Teori Relativitas Umum.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1921</div>
+            <div class="description">
+              Menerima Nobel Fisika atas penjelasan efek fotolistrik.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1933</div>
+            <div class="description">
+              Hijrah ke Amerika Serikat karena rezim Nazi, lalu menjadi profesor
+              di Institute for Advanced Study, Princeton.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1939</div>
+            <div class="description">
+              Ikut menandatangani surat kepada Presiden Roosevelt mengenai riset
+              nuklir (meskipun ia menolak senjata nuklir setelahnya).
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1933 – 1955</div>
+            <div class="description">
+              Menghabiskan sisa hidupnya di Princeton, aktif dalam penelitian,
+              filsafat sains, dan gerakan perdamaian.
+            </div>
+          </div>
+        </div>
+      </body>
+      <style>
+        .karier {
+            margin: 40px auto;
+            max-width: 700px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: #222;
+        }
+
+        .karier h2 {
+            text-align: center;
+            color: #48502c;
+            margin-bottom: 20px;
+        }
+
+        .timeline {
+            position: relative;
+            border-left: 3px solid #d0e24a;
+            padding-left: 40px;
+        }
+
+        .event {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .event::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 8px;
+            height: 8px;       
+            background-color: #e5db21;
+            border-radius: 2px; 
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+        }
+
+        .year {
+            font-weight: bold;
+            color: #e2ad4a;
+        }
+
+        .description {
+            margin-top: 5px;
+            text-indent: 2em;
+            text-align: justify;
+        }
+        </style>
+    </html>
+    </section>
+
+    <section id="penemuan">
+        <h3>Penemuan</h3>
+        <h4>1. Teori Relativitas Khusus (1905)</h4>
+        <p>Teori Relativitas Khusus menjelaskan bahwa hukum-hukum fisika berlaku sama bagi semua pengamat yang bergerak dengan kecepatan konstan relatif terhadap satu sama lain. Salah satu hal paling penting dari teori ini adalah bahwa kecepatan cahaya di ruang hampa selalu konstan, tidak bergantung pada gerak sumber cahaya maupun pengamatnya. Konsep ini menimbulkan sejumlah konsekuensi menarik, seperti waktu yang dapat berjalan lebih lambat bagi benda yang bergerak sangat cepat (dilatasi waktu) dan panjang benda yang tampak menyusut saat bergerak mendekati kecepatan cahaya (kontraksi panjang). Teori ini juga memperkenalkan hubungan antara energi dan massa melalui persamaan terkenal <i>E</i>=<i>mc</i>², yang menunjukkan bahwa energi dan massa sebenarnya merupakan dua bentuk dari satu hal yang sama. </p>
+        <h4>2. Teori Relativitas Umum (1915)</h4>
+        <p>Teori Relativitas Umum menjelaskan bahwa gravitasi bukanlah gaya tarik seperti yang dijelaskan oleh fisika klasik, melainkan akibat dari kelengkungan ruang dan waktu (ruang-waktu) yang disebabkan oleh massa dan energi. Menurut teori ini, benda bermassa besar seperti planet atau bintang akan melengkungkan ruang-waktu di sekitarnya, dan benda lain yang berada di dekatnya akan bergerak mengikuti kelengkungan tersebut. Dengan kata lain, gravitasi adalah efek geometri ruang-waktu. Teori ini juga berhasil menjelaskan berbagai fenomena yang tidak dapat dijelaskan oleh teori gravitasi Newton, seperti pergeseran orbit Merkurius dan pembelokan cahaya oleh gravitasi, yang telah dibuktikan melalui pengamatan ilmiah. Relativitas Umum menjadi dasar penting bagi pemahaman modern tentang lubang hitam, gelombang gravitasi, dan perluasan alam semesta.</p>
+        <h4>3. Efek Fotolistrik</h4>
+        <p>Efek fotolistrik adalah peristiwa ketika elektron terpancar dari permukaan logam saat logam tersebut disinari oleh cahaya dengan frekuensi tertentu. Fenomena ini menunjukkan bahwa cahaya tidak hanya berperilaku sebagai gelombang, tetapi juga memiliki sifat partikel yang disebut foton. Setiap foton membawa energi yang besarnya bergantung pada frekuensinya; jika energi foton cukup besar, ia dapat melepaskan elektron dari logam.
+        Efek ini membuktikan bahwa energi cahaya bersifat terkuantisasi, dan besarnya energi tiap foton dirumuskan sebagai <i>E</i>=<i>hf</i>, di mana E adalah energi foton, h adalah tetapan Planck, dan f adalah frekuensi cahaya. Penemuan ini menjadi salah satu dasar utama berkembangnya mekanika kuantum, serta membuka pemahaman baru tentang hubungan antara cahaya dan materi.</p>
+        <h4>4. Kontribusi Mekanika Kuantum</h4>
+        <p>Mekanika kuantum adalah cabang fisika yang mempelajari perilaku partikel sangat kecil, seperti atom dan elektron, di mana hukum fisika klasik tidak lagi berlaku. Albert Einstein memberikan kontribusi penting dalam mekanika kuantum melalui penjelasannya tentang efek fotolistrik, yang membuktikan bahwa cahaya memiliki sifat partikel (foton) dan energi bersifat terkuantisasi. Meskipun Einstein awalnya skeptis terhadap beberapa aspek mekanika kuantum, seperti prinsip ketidakpastian Heisenberg, karyanya menjadi salah satu fondasi awal bagi teori kuantum dan membantu membuka jalan bagi pengembangan mekanika kuantum modern.</p>
+        <h4>5. Gerak Brown (1905)</h4>
+        <p>Gerak Brown adalah gerakan acak partikel kecil yang tersuspensi dalam cairan atau gas. Fenomena ini awalnya diamati secara eksperimen, tetapi penjelasan teoritisnya diberikan oleh Albert Einstein pada tahun 1905. Ia menunjukkan bahwa gerakan acak partikel tersebut disebabkan oleh tumbukan terus-menerus dari molekul-molekul cairan, dan melalui perhitungannya, Einstein mampu menghubungkan gerak partikel dengan ukuran molekul dan konstanta Avogadro. Penjelasan ini tidak hanya memberikan bukti eksperimental kuat bagi teori atom dan molekul, tetapi juga menjadi dasar penting bagi mekanika statistik modern dan pemahaman kinetika molekuler.</p>
+        <h4>6. Kosmologi Modern</h4>
+        <p>Kosmologi modern adalah cabang ilmu fisika yang mempelajari asal-usul, evolusi, dan struktur alam semesta secara keseluruhan. Dengan memanfaatkan teori relativitas umum, kosmologi modern mampu menjelaskan fenomena seperti perkembangan alam semesta sejak Big Bang, perluasan alam semesta, pembentukan galaksi dan bintang, serta materi dan energi gelap yang mendominasi kosmos. Observasi astronomi seperti radiasi latar kosmik (cosmic microwave background) dan pengukuran pergeseran merah galaksi mendukung model kosmologi ini, menjadikannya landasan ilmiah bagi pemahaman tentang bagaimana alam semesta terbentuk dan terus berkembang hingga saat ini.</p>
+    </section>
+
+    <section id="penghargaan">
+      <h3>Penghargaan</h3>
+        <ol type="1" style="margin-left: 20px; line-height: 1.6;">
+            <li>Nobel Fisika (1921)</li>
+            <li>Copley Medal (1925)</li>
+            <li>Max Planck Medal (1929)</li>
+            <li>Franklin Medal (1935)</li>
+            <li>Honorary Doctorates & Memberships</li>
+            <li>Menerima gelar kehormatan dari berbagai universitas ternama (misalnya Cambridge, Oxford, Harvard, dan Universitas Paris)</li>
+            <li>Mencetuskan Teori Relativitas yang mengubah pemahaman tentang ruang, waktu, dan gravitasi</li>
+            <li>Memberikan kontribusi fundamental pada mekanika kuantum dan kosmologi modern</li>
+            <li>Menjadi salah satu tokoh sains paling berpengaruh abad ke-20, hingga kini dikenal luas di seluruh dunia</li>
+        </ol>
+    </section>
+
+     <h4 class="penutup">
+  Itulah akhir dari perjalanan kita menelusuri kisah hidup dan pemikiran Albert Einstein. 
+  Semoga wawasan tentang teori-teori revolusioner, kontribusinya dalam sains, dan semangat 
+  ingin tahunya terus menginspirasi kita untuk selalu belajar dan berpikir kritis.
+  <br><br>
+  Terima kasih sudah belajar bersama di <b>BelajarBareng</b>! 
+  Jangan lupa jelajahi terus website ini untuk menambah pengetahuanmu! 💡
+</h4>
+
+<style>
+  .penutup {
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #e1e1e1;
+    line-height: 1.8;
+    font-size: 1.05em;
+    max-width: 700px;    
+    margin: 30px auto;   
+    padding: 0 15px;    
+  }
+
+  .penutup b {
+    color: #f4d03f;
+    font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    .penutup {
+      font-size: 1em;
+      line-height: 1.6;
+      max-width: 90%;
+    }
+  }
+</style>
+    
+    <footer>
+      © 2025 BelajarBareng | Dibuat oleh <b>Mutiara Novia Putri</b>
+    </footer>
+  </body>
+</html>
