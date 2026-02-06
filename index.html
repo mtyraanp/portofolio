@@ -1,541 +1,470 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Mutiara Novia</title>
-    <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans-Serif) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <title>BelajarBareng: The Legacy of Albert Einstein</title>
     <style>
-      :root {
-        --bg-dark: #1e1412; /* Brown Espresso lebih pekat */
-        --bg-accent: #2a1d1a;
-        --text-main: #f2e6d8;
-        --pink-soft: #d4a5a5;
-        --gold: #c5a059;
-        --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      * {
+      body {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        background-color: var(--bg-dark);
-        color: var(--text-main);
         font-family: "Poppins", sans-serif;
-        line-height: 1.8;
+        background: radial-gradient(
+          circle at 20% 30%,
+          #0b132b,
+          #1c2541,
+          #3a506b
+        );
+        color: #f5f6fa;
         overflow-x: hidden;
         scroll-behavior: smooth;
       }
 
-      /* Navigasi */
-      nav {
+      body::before {
+        content: "";
         position: fixed;
         top: 0;
-        width: 100%;
-        padding: 1.5rem 8%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: rgba(30, 20, 18, 0.9);
-        backdrop-filter: blur(20px);
-        z-index: 1000;
-        border-bottom: 0.5px solid rgba(197, 160, 89, 0.1);
-      }
-
-      .logo {
-        font-family: "Playfair Display", serif;
-        font-size: 1.4rem;
-        color: var(--gold);
-        text-decoration: none;
-        font-weight: 600;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 2rem;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--text-main);
-        font-size: 0.75rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        transition: var(--transition);
-        opacity: 0.5;
-      }
-
-      .nav-links a:hover {
-        opacity: 1;
-        color: var(--pink-soft);
-      }
-
-      /* Hero Section */
-      .hero {
-        height: 100vh;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        padding: 0 10%;
-        gap: 4rem;
-      }
-
-      .hero-image-container {
-        position: relative;
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      /* Foto Kotak Minimalis */
-      .profile-square {
-        width: 400px;
-        height: 400px;
-        background: var(--bg-accent);
-        position: relative;
-        border: 1px solid rgba(197, 160, 89, 0.3);
-        box-shadow:
-          20px 20px 0px var(--bg-accent),
-          21px 21px 0px var(--gold);
-      }
-
-      .profile-square img {
+        left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        filter: grayscale(20%) contrast(1.05);
+        background: url("https://i.ibb.co/1M5JMjB/stars.png") repeat;
+        opacity: 0.3;
+        z-index: -1;
+        animation: stars 100s linear infinite;
       }
 
-      .hero-content h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 4rem;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        color: var(--text-main);
+      @keyframes stars {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: 10000px 5000px;
+        }
       }
 
-      .hero-content h1 span {
-        color: var(--pink-soft);
-        font-style: italic;
+      header {
+        text-align: center;
+        padding: 70px 20px 40px;
       }
 
-      /* Section Layouts */
-      section {
-        padding: 140px 10%;
-      }
-
-      .section-header {
-        margin-bottom: 4rem;
-        max-width: 600px;
-      }
-
-      .section-header span {
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        font-size: 0.7rem;
-        color: var(--gold);
-        display: block;
+      h1 {
+        font-size: 3em;
+        color: #f4d03f;
+        text-shadow: 0 0 20px rgba(255, 223, 0, 0.6);
         margin-bottom: 10px;
       }
 
-      .section-header h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 2.8rem;
-        color: var(--pink-soft);
-      }
-
-      /* Philosophy Section (New) */
-      .philosophy {
-        background: var(--bg-accent);
-        text-align: center;
-        padding: 100px 15%;
-      }
-
-      .philosophy blockquote {
-        font-family: "Playfair Display", serif;
-        font-size: 2.2rem;
+      h2 {
+        color: #dcdde1;
+        font-weight: 300;
         font-style: italic;
-        color: var(--text-main);
-        position: relative;
+        letter-spacing: 1px;
       }
 
-      /* Areas of Interest (New) */
-      .interest-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-
-      .interest-card {
-        padding: 2.5rem;
-        border: 1px solid rgba(242, 230, 216, 0.1);
-        transition: var(--transition);
-      }
-
-      .interest-card:hover {
-        background: rgba(212, 165, 165, 0.05);
-        border-color: var(--pink-soft);
-      }
-
-      .interest-card h3 {
-        font-family: "Playfair Display", serif;
-        color: var(--gold);
-        margin-bottom: 1rem;
-      }
-
-      /* Experience & Awards */
-      .timeline {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5rem;
-      }
-
-      .experience-item {
-        margin-bottom: 3rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid rgba(242, 230, 216, 0.05);
-      }
-
-      .experience-item .date {
-        font-size: 0.8rem;
-        color: var(--gold);
-        margin-bottom: 0.5rem;
-        display: block;
-      }
-
-      /* Works Section */
-      .work-featured {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        background: var(--bg-accent);
-        align-items: center;
-        border: 1px solid rgba(197, 160, 89, 0.1);
-      }
-
-      .work-info {
-        padding: 4rem;
-      }
-
-      .work-image {
-        height: 400px;
-        background: #444;
-        /* Placeholder untuk screenshot website tugas */
-        background-image: url("https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=800");
-        background-size: cover;
-        background-position: center;
-      }
-
-      /* Contact Section */
-      .contact-box {
+      nav {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px 0;
         text-align: center;
-        padding: 100px 0;
-        border-top: 1px solid rgba(197, 160, 89, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
       }
 
-      .contact-methods {
-        display: flex;
-        justify-content: center;
-        gap: 4rem;
-        margin-top: 3rem;
-      }
-
-      .contact-methods a {
-        color: var(--text-main);
+      nav a {
+        color: #f4d03f;
         text-decoration: none;
-        font-family: "Playfair Display", serif;
-        font-size: 1.8rem;
-        transition: var(--transition);
-        opacity: 0.7;
+        font-weight: 600;
+        margin: 0 20px;
+        transition: 0.3s;
       }
 
-      .contact-methods a:hover {
-        opacity: 1;
-        color: var(--pink-soft);
-        transform: translateY(-5px);
+      nav a:hover {
+        color: #ffffff;
+        text-shadow: 0 0 8px #f4d03f;
       }
 
-      /* Reveal Animation */
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: var(--transition);
+      section {
+        max-width: 900px;
+        margin: 60px auto;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        animation: fadeIn 1.5s ease;
       }
 
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h3 {
+        color: #f4d03f;
+        margin-bottom: 10px;
+        border-left: 4px solid #f4d03f;
+        padding-left: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      p {
+        color: #e1e1e1;
+        line-height: 1.8;
+        text-align: justify;
+        margin-bottom: 25px;
+      }
+
+      .einstein-img {
+        display: block;
+        width: 50%;
+        max-width: 600px;
+        margin: 30px auto;
+        border-radius: 12px;
+        box-shadow: 0 0 25px rgba(244, 208, 63, 0.4);
+        transition: transform 0.3s ease;
+      }
+
+      .einstein-img:hover {
+        transform: scale(1.03);
       }
 
       footer {
-        padding: 3rem;
         text-align: center;
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-        opacity: 0.3;
+        color: #f4d03f;
+        font-size: 0.9em;
+        padding: 25px 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 60px;
       }
 
-      @media (max-width: 900px) {
-        .hero,
-        .timeline,
-        .work-featured {
-          grid-template-columns: 1fr;
-        }
-        .hero {
-          height: auto;
-          padding-top: 120px;
-          text-align: center;
-        }
-        .hero-image-container {
-          justify-content: center;
-        }
-        .profile-square {
-          width: 300px;
-          height: 300px;
-        }
-        .hero-content h1 {
-          font-size: 2.8rem;
-        }
-        .nav-links {
-          display: none;
-        }
+      footer a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #f4d03f;
       }
     </style>
   </head>
+
   <body>
+    <header id="beranda">
+      <h1>Albert Einstein</h1>
+      <h2>"Imagination is more important than knowledge"</h2>
+      <h4 class="pembuka">
+        Selamat datang di <b>BelajarBareng</b>, tempat berbagi wawasan, ide, dan
+        inspirasi dari berbagai bidang ilmu. Setiap rasa ingin tahu adalah
+        langkah kecil menuju penemuan besar 🌟
+      </h4>
+
+      <h4 class="pembuka">
+        Kali ini, kita akan membahas sosok jenius yang mengubah cara pandang
+        manusia terhadap alam semesta, <b>Albert Einstein</b>. Yuk, kita
+        jelajahi kisah hidup, pemikiran, dan warisan ilmiahnya yang terus
+        menginspirasi dunia hingga kini!
+      </h4>
+
+      <style>
+        .pembuka {
+          text-align: justify;
+          text-justify: inter-word;
+          font-family: "Open Sans", sans-serif;
+          font-weight: normal;
+          color: #e1e1e1;
+          line-height: 1.8;
+          font-size: 1.1em;
+          max-width: 800px;
+          margin: 0 auto 25px;
+        }
+
+        .pembuka b {
+          color: #f4d03f;
+        }
+      </style>
+    </header>
+
     <nav>
-      <a href="#" class="logo">Mutiara's Journey</a>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">Journal</a>
-        <a href="#interests">Interests</a>
-        <a href="#works">Project</a>
-        <a href="#activities">Experience</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <a href="#biografi">Biografi</a>|
+      <a href="#perjalanan">Perjalanan Karier</a>|
+      <a href="#penemuan">Penemuan</a> | 
+      <a href="#penghargaan">Penghargaan</a>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="hero">
-      <div class="hero-content reveal">
-        <span>Student of Life</span>
-        <h1>Curating <span>Knowledge</span> & Curiosity.</h1>
-        <p>
-          Halo, saya Mutiara Novia Putri. Pelajar yang sedang menempuh
-          pendidikan di SMA Negeri 1 Subang. Saya percaya bahwa pendidikan
-          adalah seni untuk memahami dunia secara mendalam.
-        </p>
-      </div>
-      <div class="hero-image-container reveal">
-        <div class="profile-square">
-          <!-- SILAKAN GANTI URL FOTO DISINI -->
-          <a href="https://ibb.co.com/Lz15f0X0"><img src="https://i.ibb.co.com/wN4s1dFd/In-Shot-20250111-084941126.jpg" alt="In-Shot-20250111-084941126" border="0"></a>
-        </div>
-      </div>
+    <section id="biografi">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg"
+        alt="Albert Einstein"
+        class="einstein-img"
+      />
+      <h3>Biografi Singkat</h3>
+      <p>
+        Albert Einstein lahir pada tanggal 14 Maret 1879 di Ulm, Württemberg,
+        Jerman. Ia merupakan anak pertama dari pasangan Hermann Einstein dan
+        Pauline Koch. Ayahnya bekerja sebagai insinyur dan pemilik perusahaan
+        listrik kecil, sementara ibunya dikenal sebagai wanita yang gemar musik.
+        Sejak kecil, Einstein menunjukkan rasa ingin tahu yang tinggi terhadap
+        fenomena alam dan memiliki kemampuan berpikir logis yang luar biasa,
+        meskipun ia baru mulai lancar berbicara pada usia tiga tahun.
+      </p>
+      <p>
+        Pada masa sekolah, Einstein bukanlah murid yang selalu mendapatkan nilai
+        terbaik, namun ia sangat menonjol dalam bidang matematika dan fisika. Ia
+        kemudian melanjutkan pendidikan di Politeknik Federal Swiss (ETH Zurich)
+        dan lulus pada tahun 1900. Setelah lulus, Einstein sempat kesulitan
+        mendapatkan pekerjaan sebagai dosen, sehingga ia bekerja sebagai pegawai
+        di Kantor Paten Swiss di Bern. Di sela-sela pekerjaannya, ia terus
+        melakukan penelitian ilmiah secara mandiri.
+      </p>
+      <p>
+        Tahun 1905 menjadi tahun paling bersejarah dalam hidupnya, yang kemudian
+        dikenal sebagai Annus Mirabilis atau “tahun ajaib”. Dalam tahun itu, ia
+        menerbitkan empat makalah ilmiah penting yang mengubah dasar pemahaman
+        manusia terhadap alam semesta, di antaranya tentang efek fotolistrik,
+        gerak Brown, relativitas khusus, dan persamaan energi-massa yang
+        terkenal, yaitu <i>E</i>=<i>mc</i>²
+      </p>
+      <p>
+        Pada tahun 1915, Einstein menyempurnakan teori relativitasnya menjadi
+        Teori Relativitas Umum, yang menjelaskan bahwa gravitasi bukanlah gaya,
+        melainkan kelengkungan ruang dan waktu akibat massa dan energi. Teori
+        ini kemudian terbukti benar melalui pengamatan ilmiah dan menjadikannya
+        ilmuwan paling terkenal di dunia.
+      </p>
+      <p>
+        Einstein menerima Hadiah Nobel Fisika pada tahun 1921, bukan untuk teori
+        relativitasnya, melainkan untuk penjelasannya tentang efek fotolistrik
+        yang membuka jalan bagi perkembangan teknologi modern seperti sel surya.
+      </p>
+      <p>
+        Karena meningkatnya kekuasaan Nazi di Jerman dan latar belakangnya
+        sebagai orang Yahudi, Einstein pindah ke Amerika Serikat pada tahun 1933
+        dan bekerja di Institute for Advanced Study, Princeton, New Jersey. Di
+        sana, ia terus mengembangkan teori fisika, namun juga aktif menyuarakan
+        perdamaian dunia dan menentang penggunaan senjata nuklir.
+      </p>
+      <p>
+        Albert Einstein meninggal dunia pada 18 April 1955 di Princeton, Amerika
+        Serikat, pada usia 76 tahun. Ia meninggalkan warisan luar biasa dalam
+        dunia ilmu pengetahuan dan menjadi simbol kejeniusaan manusia. Hingga
+        kini, nama Einstein tetap identik dengan kecerdasan, kreativitas, dan
+        semangat untuk mencari kebenaran melalui sains.
+      </p>
     </section>
 
-    <!-- Philosophy -->
-    <section class="philosophy reveal">
-      <blockquote>
-        "Science is not just a subject, it's a way of seeing the beauty in every
-        small detail of existence."
-      </blockquote>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-      <div class="section-header reveal">
-        <span>01. The Journal</span>
-        <h2>Tentang Perjalanan Saya</h2>
-      </div>
-      <div style="max-width: 800px" class="reveal">
-        <p style="margin-bottom: 2rem; font-size: 1.1rem">
-          Bagi saya, menjadi seorang pelajar berarti menjadi seorang pengamat.
-          Ketertarikan saya pada dunia sains lahir dari kebiasaan mencatat
-          hal-hal kecil di sekitar. Dari sanalah saya belajar tentang disiplin,
-          ketelitian, dan kejujuran dalam mencari data.
-        </p>
-        <p>
-          Hobi saya adalah membaca buku dan mendengarkan musik. Keduanya
-          memberikan ruang bagi saya untuk beristirahat sejenak sekaligus
-          menyegarkan pikiran. Sementara itu, cita-cita saya sebagai
-          <i>engineer</i> terus memotivasi saya untuk memberikan yang terbaik di
-          dalam setiap tugas dan proses pembelajaran di sekolah.
-        </p>
-      </div>
-    </section>
-
-    <!-- Interests Section (New) -->
-    <section id="interests">
-      <div class="section-header reveal">
-        <span>02. Focus Area</span>
-        <h2>Bidang Eksplorasi</h2>
-      </div>
-      <div class="interest-grid reveal">
-        <div class="interest-card">
-          <h3>Math</h3>
-          <p>
-            Mengembangkan pemahaman konsep matematika serta penerapannya dalam
-            pemecahan masalah
-          </p>
-        </div>
-        <div class="interest-card">
-          <h3>Informatics</h3>
-          <p>
-            Memahami dasar pemrograman dan algoritma sebagai solusi berbasis
-            teknologi
-          </p>
-        </div>
-        <div class="interest-card">
-          <h3>Chemistry</h3>
-          <p>
-            Mendalami reaksi kimia, sifat zat, serta penerapan konsep kimia
-            dalam kehidupan sehari-hari
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Works Section -->
-    <section id="works">
-      <div class="section-header reveal">
-        <span>03. Showcase</span>
-        <h2>Karya Terpilih</h2>
-      </div>
-      <div class="work-featured reveal">
-        <div class="work-image"></div>
-        <div class="work-info">
-          <h3>Tugas Sekolah</h3>
-          <p style="margin-bottom: 1.5rem">
-            Website "BelajarBareng" dengan judul "The Legacy of Albert Einstein"
-          </p>
-          <a
-            href="https://mtyraanp.github.io/portofolio/"
-            style="
-              color: var(--gold);
-              text-transform: uppercase;
-              font-size: 0.8rem;
-              letter-spacing: 2px;
-              text-decoration: none;
-            "
-            >View Project &rarr;</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- Activities & Awards Section -->
-    <section id="activities">
-      <div class="section-header reveal">
-        <span>04. Milestone</span>
-        <h2>Pengalaman & Prestasi</h2>
-      </div>
-      <div class="timeline reveal">
-        <div>
-          <h3 style="margin-bottom: 2rem; color: var(--gold)">ORGANISASI</h3>
-          <div class="experience-item">
-            <span class="date">2021 — 2022</span>
-            <h4>Ketua Ekstrakurikuler KIR Matematika</h4>
-            <p>
-              Memimpin, mengatur, dan memastikan kegiatan ekstrakurikuler
-              berjalan lancar.
-          </div>
-          <div class="experience-item">
-            <span class="date">2021 — 2022</span>
-            <h4>Sekretaris OSIS SMP Negeri 1 Jalancagak</h4>
-            <p>
-              Bertanggung jawab atas administrasi dan manajemen inventaris
-              organisasi.
-            </p>
-          </div>
-            <div class="experience-item">
-              <span class="date">2021 — 2022</span>
-              <h4>Ketua Seksi Bidang 10 OSIS SMA Negeri 1 Subang</h4>
-              <p>
-                Merencanakan, memimpin dan melaksanakan program kerja sesuai
-                bidang.
-              </p>
+    <section id="perjalanan">
+      <h3>Perjalanan Karier</h3>
+        <div class="timeline">
+          <div class="event">
+            <div class="year">1896 – 1900</div>
+            <div class="description">
+              Menempuh pendidikan di Swiss Federal Polytechnic, Zürich.
             </div>
           </div>
-          <div>
-            <h3 style="margin-bottom: 2rem; color: var(--gold)">PENGHARGAAN</h3>
-            <div class="experience-item">
-              <span class="date">Oktober 2022</span>
-              <h4> Finalis Olimpiade Sains Nasional (OSN) IPS Tahun
-                2022</h4>
-              <p>Urutan 53 OSN IPS tingkat Nasional tahun 2022</p>
+
+          <div class="event">
+            <div class="year">1902 – 1909</div>
+            <div class="description">
+              Bekerja sebagai pegawai di Swiss Patent Office di Bern, sambil
+              menulis karya ilmiah.
             </div>
-            <div class="experience-item">
-              <span class="date">Maret 2024</span>
-              <h4> Peserta Olimpiade Sains Nasional (OSN) Cabang Matematika Tahun
-                2024</h4>
-              <p>Menjadi perwakilan sekolah dalam ajang OSN tingkat Kabupaten</p>
+          </div>
+
+          <div class="event">
+            <div class="year">1905</div>
+            <div class="description">
+              Menerbitkan <em>Annus Mirabilis Papers</em> (empat makalah
+              revolusioner) yang mengubah fisika modern.
             </div>
-            <div class="experience-item">
-              <span class="date">Juni 2025</span>
-              <h4>
-                Peserta Olimpiade Sains Nasional (OSN) Cabang Informatika Tahun
-                2024
-              </h4>
-              <p>
-                Menjadi perwakilan sekolah dalam ajang OSN tingkat Kabupaten
-              </p>
+          </div>
+
+          <div class="event">
+            <div class="year">1909</div>
+            <div class="description">
+              Diangkat sebagai profesor luar biasa di University of Zurich.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1911 – 1914</div>
+            <div class="description">
+              Menjadi profesor di German University of Prague dan kembali ke
+              Zürich.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1914</div>
+            <div class="description">
+              Bergabung dengan Prussian Academy of Sciences di Berlin,
+              mengembangkan Teori Relativitas Umum.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1921</div>
+            <div class="description">
+              Menerima Nobel Fisika atas penjelasan efek fotolistrik.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1933</div>
+            <div class="description">
+              Hijrah ke Amerika Serikat karena rezim Nazi, lalu menjadi profesor
+              di Institute for Advanced Study, Princeton.
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1939</div>
+            <div class="description">
+              Ikut menandatangani surat kepada Presiden Roosevelt mengenai riset
+              nuklir (meskipun ia menolak senjata nuklir setelahnya).
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="year">1933 – 1955</div>
+            <div class="description">
+              Menghabiskan sisa hidupnya di Princeton, aktif dalam penelitian,
+              filsafat sains, dan gerakan perdamaian.
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-box">
-      <div class="reveal">
-        <span>05. Connectivity</span>
-        <h2
-          style="
-            font-family: &quot;Playfair Display&quot;, serif;
-            font-size: 3rem;
-            margin-top: 10px;
-          "
-        >
-          Mari Berbincang.
-        </h2>
-        <p style="margin-top: 1rem; opacity: 0.7">
-          Terbuka untuk kolaborasi atau sekadar berbagi cerita.
-        </p>
-        <div class="contact-methods">
-          <a href="mailto:mutiaranovia16@gmail.com">Email</a>
-          <a href="https://www.instagram.com/mtyraanp">Instagram</a>
-          <a href="https://github.com/mtyraanp">GitHub</a>
-        </div>
-      </div>
-    </section>
-
-    <footer>DESIGNED BY MUTIARA NOVIA &mdash; 2026</footer>
-
-    <script>
-      function reveal() {
-        var reveals = document.querySelectorAll(".reveal");
-        for (var i = 0; i < reveals.length; i++) {
-          var windowHeight = window.innerHeight;
-          var elementTop = reveals[i].getBoundingClientRect().top;
-          var elementVisible = 100;
-          if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
-          }
+      </body>
+      <style>
+        .karier {
+            margin: 40px auto;
+            max-width: 700px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: #222;
         }
-      }
-      window.addEventListener("scroll", reveal);
-      window.onload = reveal;
-    </script>
+
+        .karier h2 {
+            text-align: center;
+            color: #48502c;
+            margin-bottom: 20px;
+        }
+
+        .timeline {
+            position: relative;
+            border-left: 3px solid #d0e24a;
+            padding-left: 40px;
+        }
+
+        .event {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .event::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 8px;
+            height: 8px;       
+            background-color: #e5db21;
+            border-radius: 2px; 
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+        }
+
+        .year {
+            font-weight: bold;
+            color: #e2ad4a;
+        }
+
+        .description {
+            margin-top: 5px;
+            text-indent: 2em;
+            text-align: justify;
+        }
+        </style>
+    </html>
+    </section>
+
+    <section id="penemuan">
+        <h3>Penemuan</h3>
+        <h4>1. Teori Relativitas Khusus (1905)</h4>
+        <p>Teori Relativitas Khusus menjelaskan bahwa hukum-hukum fisika berlaku sama bagi semua pengamat yang bergerak dengan kecepatan konstan relatif terhadap satu sama lain. Salah satu hal paling penting dari teori ini adalah bahwa kecepatan cahaya di ruang hampa selalu konstan, tidak bergantung pada gerak sumber cahaya maupun pengamatnya. Konsep ini menimbulkan sejumlah konsekuensi menarik, seperti waktu yang dapat berjalan lebih lambat bagi benda yang bergerak sangat cepat (dilatasi waktu) dan panjang benda yang tampak menyusut saat bergerak mendekati kecepatan cahaya (kontraksi panjang). Teori ini juga memperkenalkan hubungan antara energi dan massa melalui persamaan terkenal <i>E</i>=<i>mc</i>², yang menunjukkan bahwa energi dan massa sebenarnya merupakan dua bentuk dari satu hal yang sama. </p>
+        <h4>2. Teori Relativitas Umum (1915)</h4>
+        <p>Teori Relativitas Umum menjelaskan bahwa gravitasi bukanlah gaya tarik seperti yang dijelaskan oleh fisika klasik, melainkan akibat dari kelengkungan ruang dan waktu (ruang-waktu) yang disebabkan oleh massa dan energi. Menurut teori ini, benda bermassa besar seperti planet atau bintang akan melengkungkan ruang-waktu di sekitarnya, dan benda lain yang berada di dekatnya akan bergerak mengikuti kelengkungan tersebut. Dengan kata lain, gravitasi adalah efek geometri ruang-waktu. Teori ini juga berhasil menjelaskan berbagai fenomena yang tidak dapat dijelaskan oleh teori gravitasi Newton, seperti pergeseran orbit Merkurius dan pembelokan cahaya oleh gravitasi, yang telah dibuktikan melalui pengamatan ilmiah. Relativitas Umum menjadi dasar penting bagi pemahaman modern tentang lubang hitam, gelombang gravitasi, dan perluasan alam semesta.</p>
+        <h4>3. Efek Fotolistrik</h4>
+        <p>Efek fotolistrik adalah peristiwa ketika elektron terpancar dari permukaan logam saat logam tersebut disinari oleh cahaya dengan frekuensi tertentu. Fenomena ini menunjukkan bahwa cahaya tidak hanya berperilaku sebagai gelombang, tetapi juga memiliki sifat partikel yang disebut foton. Setiap foton membawa energi yang besarnya bergantung pada frekuensinya; jika energi foton cukup besar, ia dapat melepaskan elektron dari logam.
+        Efek ini membuktikan bahwa energi cahaya bersifat terkuantisasi, dan besarnya energi tiap foton dirumuskan sebagai <i>E</i>=<i>hf</i>, di mana E adalah energi foton, h adalah tetapan Planck, dan f adalah frekuensi cahaya. Penemuan ini menjadi salah satu dasar utama berkembangnya mekanika kuantum, serta membuka pemahaman baru tentang hubungan antara cahaya dan materi.</p>
+        <h4>4. Kontribusi Mekanika Kuantum</h4>
+        <p>Mekanika kuantum adalah cabang fisika yang mempelajari perilaku partikel sangat kecil, seperti atom dan elektron, di mana hukum fisika klasik tidak lagi berlaku. Albert Einstein memberikan kontribusi penting dalam mekanika kuantum melalui penjelasannya tentang efek fotolistrik, yang membuktikan bahwa cahaya memiliki sifat partikel (foton) dan energi bersifat terkuantisasi. Meskipun Einstein awalnya skeptis terhadap beberapa aspek mekanika kuantum, seperti prinsip ketidakpastian Heisenberg, karyanya menjadi salah satu fondasi awal bagi teori kuantum dan membantu membuka jalan bagi pengembangan mekanika kuantum modern.</p>
+        <h4>5. Gerak Brown (1905)</h4>
+        <p>Gerak Brown adalah gerakan acak partikel kecil yang tersuspensi dalam cairan atau gas. Fenomena ini awalnya diamati secara eksperimen, tetapi penjelasan teoritisnya diberikan oleh Albert Einstein pada tahun 1905. Ia menunjukkan bahwa gerakan acak partikel tersebut disebabkan oleh tumbukan terus-menerus dari molekul-molekul cairan, dan melalui perhitungannya, Einstein mampu menghubungkan gerak partikel dengan ukuran molekul dan konstanta Avogadro. Penjelasan ini tidak hanya memberikan bukti eksperimental kuat bagi teori atom dan molekul, tetapi juga menjadi dasar penting bagi mekanika statistik modern dan pemahaman kinetika molekuler.</p>
+        <h4>6. Kosmologi Modern</h4>
+        <p>Kosmologi modern adalah cabang ilmu fisika yang mempelajari asal-usul, evolusi, dan struktur alam semesta secara keseluruhan. Dengan memanfaatkan teori relativitas umum, kosmologi modern mampu menjelaskan fenomena seperti perkembangan alam semesta sejak Big Bang, perluasan alam semesta, pembentukan galaksi dan bintang, serta materi dan energi gelap yang mendominasi kosmos. Observasi astronomi seperti radiasi latar kosmik (cosmic microwave background) dan pengukuran pergeseran merah galaksi mendukung model kosmologi ini, menjadikannya landasan ilmiah bagi pemahaman tentang bagaimana alam semesta terbentuk dan terus berkembang hingga saat ini.</p>
+    </section>
+
+    <section id="penghargaan">
+      <h3>Penghargaan</h3>
+        <ol type="1" style="margin-left: 20px; line-height: 1.6;">
+            <li>Nobel Fisika (1921)</li>
+            <li>Copley Medal (1925)</li>
+            <li>Max Planck Medal (1929)</li>
+            <li>Franklin Medal (1935)</li>
+            <li>Honorary Doctorates & Memberships</li>
+            <li>Menerima gelar kehormatan dari berbagai universitas ternama (misalnya Cambridge, Oxford, Harvard, dan Universitas Paris)</li>
+            <li>Mencetuskan Teori Relativitas yang mengubah pemahaman tentang ruang, waktu, dan gravitasi</li>
+            <li>Memberikan kontribusi fundamental pada mekanika kuantum dan kosmologi modern</li>
+            <li>Menjadi salah satu tokoh sains paling berpengaruh abad ke-20, hingga kini dikenal luas di seluruh dunia</li>
+        </ol>
+    </section>
+
+     <h4 class="penutup">
+  Itulah akhir dari perjalanan kita menelusuri kisah hidup dan pemikiran Albert Einstein. 
+  Semoga wawasan tentang teori-teori revolusioner, kontribusinya dalam sains, dan semangat 
+  ingin tahunya terus menginspirasi kita untuk selalu belajar dan berpikir kritis.
+  <br><br>
+  Terima kasih sudah belajar bersama di <b>BelajarBareng</b>! 
+  Jangan lupa jelajahi terus website ini untuk menambah pengetahuanmu! 💡
+</h4>
+
+<style>
+  .penutup {
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #e1e1e1;
+    line-height: 1.8;
+    font-size: 1.05em;
+    max-width: 700px;    
+    margin: 30px auto;   
+    padding: 0 15px;    
+  }
+
+  .penutup b {
+    color: #f4d03f;
+    font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    .penutup {
+      font-size: 1em;
+      line-height: 1.6;
+      max-width: 90%;
+    }
+  }
+</style>
+    
+    <footer>
+      © 2025 BelajarBareng | Dibuat oleh <b>Mutiara Novia Putri</b>
+    </footer>
   </body>
 </html>
